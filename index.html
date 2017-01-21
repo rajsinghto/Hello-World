@@ -11,7 +11,17 @@
         <p>Hello Sexy People!</p>
         <div id="mapid"></div>
         <script>
+            //create the map
             var mymap = L.map('mapid').setView([51.505, -0.09], 13);
+        
+            //add tile layer (streets)
+            L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/streets-v10/tiles/256/{z}/{x}/{y}?access_token={accessToken}', {
+            attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
+            maxZoom: 18,
+            id: 'your.mapbox.project.id',
+            accessToken: 'pk.eyJ1IjoicmFqc2luZ2h0byIsImEiOiJjaXk3Z2d5c2EwMDU0MzJtcDI0dTUxZTBtIn0.7QiB9Z1jzrPKhrM2njnt2Q'
+            }).addTo(mymap);
+        
         </script>
     </body>    
 </html>
